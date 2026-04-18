@@ -17,7 +17,7 @@
    We save colours here once so we can reuse them
    anywhere. Change one line → changes everywhere. */
 :root {
-    --purple:      #6c5ce7;   /* main brand colour   */
+    --purple:      #6c5ce7;   /* main brand colour    */
     --purple-dark: #5649c0;   /* darker purple hover  */
     --green:       #00b894;   /* correct answer       */
     --red:         #ff7675;   /* wrong answer         */
@@ -32,7 +32,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;          /* padding doesn't expand the box */
+    box-sizing: border-box;           /* padding doesn't expand the box */
     font-family: 'Poppins', sans-serif;
 }
 
@@ -41,20 +41,20 @@
    The purple gradient you see behind the white card. */
 body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    display: flex;                   /* centres children horizontally  */
-    justify-content: center;         /* and vertically                 */
+    display: flex;                    /* centres children horizontally */
+    justify-content: center;          /* and vertically                */
     align-items: center;
-    min-height: 100vh;               /* fills the full screen height   */
+    min-height: 100vh;                /* fills the full screen height  */
     padding: 20px;
 }
 
 
-/* ── WHITE CARD (main container) ────────────────────
+/* ── WHITE CARD ─────────────────────────────────────
    The white rounded box that holds the whole quiz. */
 .app-container {
     background: #ffffff;
     width: 100%;
-    max-width: 550px;                /* never wider than 550px         */
+    max-width: 550px;                 /* never wider than 550px        */
     border-radius: 20px;
     padding: 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -62,7 +62,7 @@ body {
 
 
 /* ═══════════════════════════════════════════════════
-   HEADER AREA (title + progress bar + counter)
+   HEADER (title + progress bar + question counter)
 ═══════════════════════════════════════════════════ */
 
 .quiz-header {
@@ -81,17 +81,16 @@ body {
     height: 6px;
     background: #dfe6e9;
     border-radius: 10px;
-    overflow: hidden;                /* hides the purple bar if it overflows */
+    overflow: hidden;                 /* hides bar if it overflows     */
     margin-bottom: 10px;
 }
 
-/* The purple fill that grows as questions are answered.
-   JavaScript changes its width via style="width: X%" */
+/* The purple fill — JavaScript changes its width */
 .progress-bar {
     height: 100%;
     background: var(--purple);
-    width: 0%;                       /* starts at 0%, JS will update it */
-    transition: width 0.4s ease;     /* smooth animation when it grows  */
+    width: 0%;                        /* starts at 0%, JS updates it   */
+    transition: width 0.4s ease;      /* smooth animation when it grows */
 }
 
 /* "1 of 10 Questions" text */
@@ -100,58 +99,6 @@ body {
     color: var(--text-muted);
     font-weight: 500;
 }
-
-
-/* ═══════════════════════════════════════════════════
-   DIFFICULTY SELECTION SCREEN
-═══════════════════════════════════════════════════ */
-
-.difficulty-screen {
-    text-align: center;
-    padding: 20px 0;
-}
-
-.diff-title {
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 6px;
-}
-
-.diff-subtitle {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 24px;
-}
-
-/* Wrapper that puts the 3 buttons side-by-side */
-.diff-buttons {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;                 /* stacks them on very small screens */
-}
-
-/* Base style shared by all 3 difficulty buttons */
-.diff-btn {
-    padding: 12px 28px;
-    border-radius: 12px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    border: 2px solid transparent;
-    background: #fff;
-    transition: transform 0.15s;
-}
-
-.diff-btn:hover {
-    transform: scale(1.06);          /* slightly bigger on hover */
-}
-
-/* Each difficulty gets its own colour */
-.diff-btn.easy   { border-color: #00b894; color: #00b894; }
-.diff-btn.medium { border-color: #e17055; color: #e17055; }
-.diff-btn.hard   { border-color: #d63031; color: #d63031; }
 
 
 /* ═══════════════════════════════════════════════════
@@ -165,11 +112,11 @@ body {
     margin-bottom: 16px;
 }
 
-/* The circular countdown display */
+/* The circular countdown ring */
 .timer-circle {
     width: 60px;
     height: 60px;
-    border-radius: 50%;              /* makes it a circle             */
+    border-radius: 50%;               /* makes it a perfect circle      */
     border: 4px solid var(--purple);
     display: flex;
     align-items: center;
@@ -181,18 +128,17 @@ body {
     margin-bottom: 6px;
 }
 
-/* When there are 10 or fewer seconds left, JavaScript
-   adds the class "danger" which turns the timer red */
+/* JavaScript adds this class when ≤10 seconds remain → turns red */
 .timer-circle.danger {
     border-color: var(--red);
     color: var(--red);
 }
 
-/* "Time's up!" message (hidden by default) */
+/* "Time's up!" message — takes up space even when empty so layout stays still */
 .timeout-msg {
     font-size: 13px;
     color: var(--red);
-    min-height: 18px;                /* reserves space so layout doesn't jump */
+    min-height: 18px;
 }
 
 
@@ -230,7 +176,7 @@ body {
     font-weight: 500;
 }
 
-/* Highlight and slide right on hover (only when not disabled) */
+/* Slides right and turns purple on hover (only when not disabled) */
 .btn:hover:not([disabled]) {
     border-color: var(--purple);
     background: #f8f9fa;
@@ -251,7 +197,7 @@ body {
     color: white;
 }
 
-/* After answering, all buttons are disabled (no more clicking) */
+/* After answering, buttons are locked — no-drop cursor shows it's disabled */
 .btn:disabled {
     cursor: not-allowed;
 }
@@ -273,7 +219,7 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: background 0.3s;
-    display: none;                   /* hidden until user picks an answer */
+    display: none;                    /* hidden until user picks an answer */
 }
 
 .next-btn:hover {
@@ -282,13 +228,12 @@ body {
 
 
 /* ═══════════════════════════════════════════════════
-   RESULT SCREEN (shown when quiz is finished)
+   RESULT SCREEN (shown when the quiz is finished)
 ═══════════════════════════════════════════════════ */
 
 .result-box {
     text-align: center;
     padding: 20px 0;
-    display: none;                   /* hidden during the quiz */
 }
 
 .score-icon {
@@ -308,7 +253,7 @@ body {
     margin-bottom: 6px;
 }
 
-/* Motivational message like "Great job!" */
+/* Motivational message like "Excellent work!" */
 .result-message {
     font-weight: 600;
     color: var(--purple) !important;
