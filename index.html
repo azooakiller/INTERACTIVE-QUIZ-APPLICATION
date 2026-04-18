@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- This makes the page look good on mobile phones too -->
+    <!-- Makes the page look good on mobile phones -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>JS Mastery Quiz</title>
 
-    <!-- Load a nice font from Google (like downloading a font from the internet) -->
+    <!-- Load a nice font from Google -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Connect our CSS file (controls how everything looks) -->
@@ -16,84 +16,65 @@
 <body>
 
     <!--
-        =============================================
-        MAIN APP CONTAINER
-        This is the white box in the center of the page.
-        Everything lives inside here.
-        =============================================
+        MAIN WHITE CARD
+        Everything lives inside this box.
     -->
     <div class="app-container">
 
         <!--
-            QUIZ HEADER
-            Shows the title, progress bar, and question counter.
-            This stays visible the whole time the quiz is running.
+            HEADER
+            Shows the title, a progress bar, and "1 of 10 Questions".
+            Always visible while the quiz is running.
         -->
         <div class="quiz-header">
             <h1>JS Mastery Quiz</h1>
 
-            <!-- Progress bar: the purple fill grows as you answer more questions -->
+            <!-- Grey track; the purple fill grows as you answer questions -->
             <div class="progress-container">
                 <div class="progress-bar" id="progress-bar"></div>
             </div>
 
-            <!-- Shows "1 of 10 Questions", updated by JavaScript -->
+            <!-- Updated by JavaScript: "1 of 10 Questions" etc. -->
             <span class="question-count" id="question-count">1 of 10 Questions</span>
         </div>
 
         <!--
-            DIFFICULTY SELECTION SCREEN
-            The first thing the user sees.
-            They pick Easy, Medium, or Hard before the quiz starts.
-        -->
-        <div class="difficulty-screen" id="difficulty-screen">
-            <p class="diff-title">Choose Difficulty</p>
-            <p class="diff-subtitle">30 seconds per question</p>
-            <div class="diff-buttons">
-                <!-- Each button calls startQuiz() with a difficulty level -->
-                <button class="diff-btn easy"   onclick="startQuiz('easy')">Easy</button>
-                <button class="diff-btn medium" onclick="startQuiz('medium')">Medium</button>
-                <button class="diff-btn hard"   onclick="startQuiz('hard')">Hard</button>
-            </div>
-        </div>
-
-        <!--
             QUIZ BOX
-            Hidden at first. Shown after the user picks a difficulty.
-            Contains: the timer, the question text, and the 4 answer buttons.
+            Contains the timer, question text, and 4 answer buttons.
+            Shown automatically when the page loads.
         -->
-        <div class="quiz-box" id="quiz-box" style="display:none;">
+        <div class="quiz-box" id="quiz-box">
 
-            <!-- Timer: shows a 30-second countdown -->
+            <!-- 30-second countdown timer -->
             <div class="timer-container">
                 <div class="timer-circle" id="timer-circle">
                     <span id="timer-text">30</span>
                 </div>
-                <!-- Message shown only when time runs out -->
+                <!-- "Time's up!" message — hidden until time runs out -->
                 <p class="timeout-msg" id="timeout-msg"></p>
             </div>
 
-            <!-- The question text (e.g. "What does DOM stand for?") -->
+            <!-- The question (e.g. "What does DOM stand for?") -->
             <h2 id="question-text">Loading question...</h2>
 
-            <!-- Answer buttons go here. JavaScript adds them automatically. -->
+            <!-- JavaScript adds the 4 answer buttons here automatically -->
             <div id="answer-buttons" class="btn-grid"></div>
 
-            <!-- Next button: hidden until the user picks an answer -->
+            <!-- Hidden until the user picks an answer -->
             <button id="next-btn" class="next-btn">Next &#8594;</button>
         </div>
 
         <!--
             RESULT SCREEN
-            Hidden during the quiz. Shown when all questions are done.
-            Displays the final score and a replay button.
+            Hidden during the quiz.
+            Shown when all 10 questions are finished.
         -->
         <div class="result-box" id="result-box" style="display:none;">
             <div class="score-icon">&#x1F3C6;</div>
             <h2>Quiz Completed!</h2>
             <p>You scored <span id="score">0</span> out of <span id="total-questions">0</span></p>
             <p id="result-message" class="result-message"></p>
-            <!-- Reloads the whole page so the quiz starts fresh -->
+            <!-- Reloads the page so the quiz starts fresh -->
             <button class="restart-btn" onclick="location.reload()">Play Again</button>
         </div>
 
