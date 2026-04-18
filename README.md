@@ -84,7 +84,4 @@ Every section of the code is clearly commented and explained, making it easy for
 
 JS Mastery Quiz is a clean, simple, and fully functional quiz application built with just HTML, CSS, and JavaScript. It is beginner-friendly, easy to customize, and a great example of how three basic web technologies can work together to create an interactive and useful tool.
 
-
-
-
-
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/5d0eec9c-f1cd-4303-a6e9-e7536523f779" />
