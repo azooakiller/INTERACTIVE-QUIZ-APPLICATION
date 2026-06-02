@@ -76,8 +76,7 @@ This project is ideal for:
 
 This project is an excellent learning example because it covers many important JavaScript concepts in one place — arrays, objects, functions, DOM manipulation, event listeners, timers with `setInterval`, and conditional logic. The code is written in plain, readable JavaScript with no frameworks or libraries, so beginners can follow every line without needing to learn anything extra.
 
-Every section of the code is clearly commented and explained, making it easy for anyone to<img width="1920" height="1080" alt="Screenshot (77)" src="https://github.com/user-attachments/assets/b8b65b10-713d-444d-aebd-c99b264dc1e2" />
- read through and understand exactly what each part does and why it is there.
+Every section of the code is clearly commented and explained, making it easy for anyone to read through and understand exactly what each part does and why it is there.
 
 ---
 
@@ -85,4 +84,4 @@ Every section of the code is clearly commented and explained, making it easy for
 
 JS Mastery Quiz is a clean, simple, and fully functional quiz application built with just HTML, CSS, and JavaScript. It is beginner-friendly, easy to customize, and a great example of how three basic web technologies can work together to create an interactive and useful tool.
 
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/5d0eec9c-f1cd-4303-a6e9-e7536523f779" />
+<img width="1920" height="1080" alt="Screenshot (77)" src="https://github.com/user-attachments/assets/b8b65b10-713d-444d-aebd-c99b264dc1e2" />
